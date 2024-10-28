@@ -1,6 +1,6 @@
 [![NuGet](https://img.shields.io/nuget/vpre/TaskExceptionCatcher.svg)](https://www.nuget.org/packages/TaskExceptionCatcher)
 
-# TastExceptionCatcher
+# TaskExceptionCatcher
 
 Use `Catcher.Run` for preventing a task to throw during a "one-fails-all" operation like `Task.WhenAll` or [AwaitMultiple](https://github.com/SymboLinker/AwaitMultiple).
 
