@@ -14,7 +14,7 @@ if (result.Exception != null)
 {
     // this point will be reached in case of an exception.
 }
-else 
+else
 {
     var taskResultValue = result.Value.
 }
@@ -38,6 +38,19 @@ else
 }
 
 // use `a` and `c`.
+```
+
+Just like with `Task.Run`, you can also create a `Task` from a synchronous function with `Catcher.Run`:
+```cs
+string SayHelloTo(string name)
+{
+    return $"Hello {name}";
+}
+
+var (a, catchResultB, catchResultC) = await Tasks(
+    Task.Run(() => SayHelloTo("A")),
+    Catcher.Run(() => SayHelloTo("B")),
+    Catcher.Run(() => SayHelloTo("C")));
 ```
 
 ## Get it

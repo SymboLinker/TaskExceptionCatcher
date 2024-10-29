@@ -16,10 +16,12 @@ public static class Catcher
         }
     }
 
+    public static Task<CatchResult<TValue>> Run<TValue>(Func<TValue> func, CancellationToken cancellationToken = default)
+        => Run(() => Task.Run(func, cancellationToken));
+
     public class CatchResult<TValue>
     {
         public TValue? Value { get; set; }
         public Exception? Exception { get; set; }
     }
 }
-
